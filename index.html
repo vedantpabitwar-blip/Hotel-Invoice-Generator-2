@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Invoice Generator</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>🍴 Hotel Invoice Generator</h1>
+
+        <!-- Customer Details -->
+        <div class="box">
+
+            <label>Customer Name</label>
+            <input type="text" id="name" placeholder="Enter Name">
+
+            <label>Mobile Number</label>
+            <input type="text" id="mobile" placeholder="Enter Mobile Number" maxlength="10">
+
+            <button onclick="sendOTP()">Send OTP</button>
+
+            <div id="otpBox" style="display:none;">
+
+                <label>Enter OTP</label>
+
+                <input type="text" id="otp" placeholder="Enter OTP">
+
+                <button onclick="verifyOTP()">Verify OTP</button>
+
+            </div>
+
+            <p id="message"></p>
+
+        </div>
+
+        <!-- Invoice -->
+        <div id="invoiceBox" style="display:none;">
+
+            <h2>Food Menu</h2>
+
+            <table>
+
+                <tr>
+                    <th>Item</th>
+                    <th>Price</th>
+                    <th>Qty</th>
+                </tr>
+
+                <tr>
+                    <td>Pizza</td>
+                    <td>200</td>
+                    <td><input type="number" id="pizza" value="0"></td>
+                </tr>
+
+                <tr>
+                    <td>Burger</td>
+                    <td>120</td>
+                    <td><input type="number" id="burger" value="0"></td>
+                </tr>
+
+                <tr>
+                    <td>Sandwich</td>
+                    <td>100</td>
+                    <td><input type="number" id="sandwich" value="0"></td>
+                </tr>
+
+                <tr>
+                    <td>Tea</td>
+                    <td>20</td>
+                    <td><input type="number" id="tea" value="0"></td>
+                </tr>
+
+                <tr>
+                    <td>Coffee</td>
+                    <td>40</td>
+                    <td><input type="number" id="coffee" value="0"></td>
+                </tr>
+
+                <tr>
+                    <td>Cold Drink</td>
+                    <td>50</td>
+                    <td><input type="number" id="cold" value="0"></td>
+                </tr>
+
+            </table>
+
+            <br>
+
+            <button onclick="generateBill()">Generate Invoice</button>
+
+            <button onclick="resetForm()">Reset</button>
+
+            <h2 id="bill"></h2>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
